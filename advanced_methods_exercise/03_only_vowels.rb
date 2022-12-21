@@ -2,9 +2,24 @@
 # The method should return true if the string contains only vowels.
 # The method should return false otherwise.
 
+# def only_vowels?(str)
+#   vowels = 'aeiou'
+#   str.split('').all? {|char| vowels.include? char}
+# end
+
 def only_vowels?(str)
-  vowels = 'aeiou'
-  str.split('').all? {|char| vowels.include? char}
+=begin
+  this version will use a hash instead of a string, which would have better time complexity
+=end
+  vowels = {
+    "a" => 0,
+    "e" => 0,
+    "i" => 0,
+    "o" => 0,
+    "u" => 0,
+  }
+  
+  str.split('').all? {|char| vowels.key? char}
 end
 
 p only_vowels?("aaoeee")  # => true
