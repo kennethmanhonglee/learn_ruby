@@ -3,16 +3,32 @@
 # The method should return the array.
 # Do not use the built-in Array#sort
 
+# def bubble_sort(arr)
+#   sorted = false
+
+#   while !sorted
+#     sorted = true
+#     arr.each.with_index do |num, i|
+#       if i == 0
+#         next
+#       elsif num < arr[i - 1]
+#         arr[i], arr[i - 1] = arr[i - 1], arr[i]
+#         sorted = false
+#       end
+#     end
+#   end
+
+#   return arr
+# end
+
 def bubble_sort(arr)
   sorted = false
-
   while !sorted
     sorted = true
-    arr.each.with_index do |num, i|
-      if i == 0
-        next
-      elsif num < arr[i - 1]
-        arr[i], arr[i - 1] = arr[i - 1], arr[i]
+
+    (0...arr.length - 1).each do |i|
+      if arr[i] > arr[i + 1]
+        arr[i], arr[i + 1] = arr[i + 1], arr[i]
         sorted = false
       end
     end
