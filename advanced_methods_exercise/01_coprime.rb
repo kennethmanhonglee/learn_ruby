@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Write a method, coprime?(num_1, num_2), that accepts two numbers as args.
 # The method should return true if the only common divisor between the two numbers is 1.
 # The method should return false otherwise. For example coprime?(25, 12) is true because
@@ -7,17 +9,14 @@ def coprime?(num_1, num_2)
   bigger = [num_1, num_2].max
   smaller = [num_1, num_2].min
 
-  smaller_factors = (2...smaller).inject([]) do |acc, el|
-    if smaller % el == 0
-      acc << el
-    end
-    acc
+  smaller_factors = (2...smaller).each_with_object([]) do |el, acc|
+    acc << el if (smaller % el).zero?
   end
-  
+
   smaller_factors.each do |num|
-    return false if bigger % num == 0
+    return false if (bigger % num).zero?
   end
-  return true
+  true
 end
 
 p coprime?(25, 12)    # => true

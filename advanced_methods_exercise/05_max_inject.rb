@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 # Write a method, max_inject(arr), that accepts any amount of numbers arguments and returns
 # the largest number. Solve this using the built-in inject.
 
 def max_inject(*arr)
-  arr.inject {|max, num| [max, num].max}
+  arr.inject { |max, num| [max, num].max }
 end
 
 p max_inject(1, -4, 0, 7, 5)  # => 7
