@@ -11,7 +11,10 @@
 # to the object_id of the returned array. The exact object_ids you get back don't matter. We just want the ids
 # to be the same before and after calling your method.
 
-def my_rotate!(array, amt); end
+def my_rotate!(array, amt)
+  amt.times {array << array.shift}
+  array
+end
 
 array_1 = %w[a b c d]
 p array_1.object_id                 # => 70354216023780
