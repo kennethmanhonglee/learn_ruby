@@ -12,6 +12,10 @@
 # to be the same before and after calling your method.
 
 def my_rotate!(array, amt)
+  if amt < 0
+    amt %= array.length
+    amt += array.length
+  end
   amt.times {array << array.shift}
   array
 end
@@ -30,6 +34,6 @@ p result_2.object_id                # => 70354216019660
 
 array_3 = %w[a b c d]
 p array_3.object_id                 # => 70354216016500
-result_3 = my_rotate!(array_3, -3)
+result_3 = my_rotate!(array_3, -7)
 p result_3                          # => ["b", "c", "d", "a"]
 p result_3.object_id                # => 70354216016500
