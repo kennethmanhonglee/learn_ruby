@@ -8,7 +8,14 @@
 # to the object_id of the returned array. The exact object_ids you get back don't matter. We just want the ids
 # to be the same before and after calling your method.
 
-def ele_replace!(array, hash); end
+def ele_replace!(array, hash)
+  array.each.with_index do | ele, i |
+    if hash.has_key? ele
+      array[i] = hash[ele]
+    end
+  end
+  array
+end
 
 array_1 = [4, 2, 0, 2]
 p array_1.object_id         # => 70119569670520
