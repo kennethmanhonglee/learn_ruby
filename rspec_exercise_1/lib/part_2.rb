@@ -20,3 +20,18 @@ def vowel_counts(string)
   string.each_char { |char| vowels[char.downcase] += 1 if vowels_string.include? char.downcase }
   vowels
 end
+
+def caesar_cipher(message, num)
+  alphabets = 'abcdefghijklmnopqrstuvwxyz'
+  results = ''
+
+  message.each_char do |char|
+    results += if alphabets.include? char
+                 alphabets[(alphabets.index(char) + num) % alphabets.length]
+               else
+                 char
+               end
+  end
+
+  results
+end
