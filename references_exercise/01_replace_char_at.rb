@@ -13,14 +13,14 @@ def replace_char_at!(str, char, idx)
   str
 end
 
-str_1 = 'hello'
-p str_1.object_id                       # => 70120944788380
-result_1 = replace_char_at!(str_1, 'j', 0)
-p result_1                              # => "jello"
-p result_1.object_id                    # => 70120944788380
+str1 = 'hello'
+p str1.object_id                       # => 70120944788380
+result1 = replace_char_at!(str1, 'j', 0)
+p result1                              # => "jello"
+p result1.object_id                    # => 70120944788380
 
-str_2 = 'world'
-p str_2.object_id                       # => 70120944769940
-result_2 = replace_char_at!(str_2, '!', 2)
-p result_2                              # => "wo!ld"
-p result_2.object_id                    # => 70120944769940
+str2 = 'world'
+p str2.object_id                       # => 70120944769940
+result2 = replace_char_at!(str2, '!', 2)
+p result2                              # => "wo!ld"
+p result2.object_id                    # => 70120944769940

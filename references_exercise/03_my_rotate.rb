@@ -20,20 +20,20 @@ def my_rotate!(array, amt)
   array
 end
 
-array_1 = %w[a b c d]
-p array_1.object_id                 # => 70354216023780
-result_1 = my_rotate!(array_1, 2)
-p result_1                          # => ["c", "d", "a", "b"]
-p result_1.object_id                # => 70354216023780
+array1 = %w[a b c d]
+p array1.object_id                 # => 70354216023780
+result1 = my_rotate!(array1, 2)
+p result1                          # => ["c", "d", "a", "b"]
+p result1.object_id                # => 70354216023780
 
-array_2 = %w[NOMAD SOHO TRIBECA]
-p array_2.object_id                 # => 70354216019660
-result_2 = my_rotate!(array_2, 1)
-p result_2                          # => ["SOHO", "TRIBECA", "NOMAD"]
-p result_2.object_id                # => 70354216019660
+array2 = %w[NOMAD SOHO TRIBECA]
+p array2.object_id                 # => 70354216019660
+result2 = my_rotate!(array2, 1)
+p result2                          # => ["SOHO", "TRIBECA", "NOMAD"]
+p result2.object_id                # => 70354216019660
 
-array_3 = %w[a b c d]
-p array_3.object_id                 # => 70354216016500
-result_3 = my_rotate!(array_3, -7)
-p result_3                          # => ["b", "c", "d", "a"]
-p result_3.object_id                # => 70354216016500
+array3 = %w[a b c d]
+p array3.object_id                 # => 70354216016500
+result3 = my_rotate!(array3, -7)
+p result3                          # => ["b", "c", "d", "a"]
+p result3.object_id                # => 70354216016500

@@ -10,19 +10,19 @@
 
 def ele_replace!(array, hash)
   array.each.with_index do |ele, i|
-    hash.has_key?(ele) && array[i] = hash[ele]
+    hash.key?(ele) && array[i] = hash[ele]
   end
   array
 end
 
-array_1 = [4, 2, 0, 2]
-p array_1.object_id         # => 70119569670520
-result_1 = ele_replace!(array_1, { 2 => 'two', 0 => 'zero', 5 => 'five' })
-p result_1                  # => [4, "two", "zero", "two"]
-p result_1.object_id        # => 70119569670520
+array1 = [4, 2, 0, 2]
+p array1.object_id         # => 70119569670520
+result1 = ele_replace!(array1, { 2 => 'two', 0 => 'zero', 5 => 'five' })
+p result1                  # => [4, "two", "zero", "two"]
+p result1.object_id        # => 70119569670520
 
-array_2 = %w[Matthias Simcha Mashu David]
-p array_2.object_id         # => 70119569668160
-result_2 = ele_replace!(array_2, 'Matthias' => 'J', 'Mashu' => 'D')
-p result_2                  # => ["J", "Simcha", "D", "David"]
-p result_2.object_id        # => 70119569668160
+array2 = %w[Matthias Simcha Mashu David]
+p array2.object_id         # => 70119569668160
+result2 = ele_replace!(array2, 'Matthias' => 'J', 'Mashu' => 'D')
+p result2                  # => ["J", "Simcha", "D", "David"]
+p result2.object_id        # => 70119569668160
