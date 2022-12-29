@@ -12,3 +12,11 @@ def hipsterfy(word)
 
   last_vowel ? "#{word[0...last_vowel]}#{word[last_vowel + 1..word.length - 1]}" : word
 end
+
+def vowel_counts(string)
+  vowels = Hash.new(0)
+  vowels_string = 'aeiou'
+
+  string.each_char { |char| vowels[char.downcase] += 1 if vowels_string.include? char.downcase }
+  vowels
+end
