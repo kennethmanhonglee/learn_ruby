@@ -9,10 +9,8 @@
 # to be the same before and after calling your method.
 
 def ele_replace!(array, hash)
-  array.each.with_index do | ele, i |
-    if hash.has_key? ele
-      array[i] = hash[ele]
-    end
+  array.each.with_index do |ele, i|
+    hash.has_key?(ele) && array[i] = hash[ele]
   end
   array
 end

@@ -12,11 +12,11 @@
 # to be the same before and after calling your method.
 
 def my_rotate!(array, amt)
-  if amt < 0
+  if amt.negative?
     amt %= array.length
     amt += array.length
   end
-  amt.times {array << array.shift}
+  amt.times { array << array.shift }
   array
 end
 
