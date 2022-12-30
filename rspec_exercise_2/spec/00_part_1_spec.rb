@@ -23,37 +23,37 @@ describe 'Part 1:' do
 
   describe 'merge' do
     it 'should accept two hashes as args' do
-      hash_1 = { 'a' => 10, 'b' => 20 }
-      hash_2 = { 'c' => 30, 'd' => 40, 'e' => 50 }
-      expect { merge(hash_1, hash_2) }.to_not raise_error
+      hash1 = { 'a' => 10, 'b' => 20 }
+      hash2 = { 'c' => 30, 'd' => 40, 'e' => 50 }
+      expect { merge(hash1, hash2) }.to_not raise_error
     end
 
     it 'should return a new hash representing containing key-value from both hashes' do
-      hash_1 = { 'a' => 10, 'b' => 20 }
-      hash_2 = { 'c' => 30, 'd' => 40, 'e' => 50 }
-      expect(merge(hash_1, hash_2)).to eq({ 'a' => 10, 'b' => 20, 'c' => 30, 'd' => 40, 'e' => 50 })
+      hash1 = { 'a' => 10, 'b' => 20 }
+      hash2 = { 'c' => 30, 'd' => 40, 'e' => 50 }
+      expect(merge(hash1, hash2)).to eq({ 'a' => 10, 'b' => 20, 'c' => 30, 'd' => 40, 'e' => 50 })
     end
 
     it 'should take the value from the second hash if the two hashes have duplicate keys' do
-      hash_1 = { 'a' => 10, 'b' => 20 }
-      hash_2 = { 'c' => 30, 'b' => 7 }
-      expect(merge(hash_1, hash_2)).to eq({ 'a' => 10, 'b' => 7, 'c' => 30 })
+      hash1 = { 'a' => 10, 'b' => 20 }
+      hash2 = { 'c' => 30, 'b' => 7 }
+      expect(merge(hash1, hash2)).to eq({ 'a' => 10, 'b' => 7, 'c' => 30 })
     end
 
     it 'should not mutate the two input hashes' do
-      hash_1 = { 'a' => 10, 'b' => 20 }
-      hash_2 = { 'c' => 30, 'd' => 40, 'e' => 50 }
-      merge(hash_1, hash_2)
+      hash1 = { 'a' => 10, 'b' => 20 }
+      hash2 = { 'c' => 30, 'd' => 40, 'e' => 50 }
+      merge(hash1, hash2)
 
-      expect(hash_1).to eq({ 'a' => 10, 'b' => 20 })
-      expect(hash_2).to eq({ 'c' => 30, 'd' => 40, 'e' => 50 })
+      expect(hash1).to eq({ 'a' => 10, 'b' => 20 })
+      expect(hash2).to eq({ 'c' => 30, 'd' => 40, 'e' => 50 })
     end
 
     it 'should not use the built-in Hash#merge method' do
-      hash_1 = { 'a' => 10, 'b' => 20 }
-      hash_2 = { 'c' => 30, 'd' => 40, 'e' => 50 }
-      expect(hash_1).not_to receive(:merge).with(hash_2)
-      merge(hash_1, hash_2)
+      hash1 = { 'a' => 10, 'b' => 20 }
+      hash2 = { 'c' => 30, 'd' => 40, 'e' => 50 }
+      expect(hash1).not_to receive(:merge).with(hash2)
+      merge(hash1, hash2)
     end
   end
 
