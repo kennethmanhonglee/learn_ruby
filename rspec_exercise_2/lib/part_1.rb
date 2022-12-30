@@ -52,3 +52,21 @@ def censor_vowels(word)
 
   result
 end
+
+def power_of_two?(num)
+  #   recursion?
+  #
+  #   recursively divide by 2
+  #   if 1 or 2 return true
+  #   if odd return false
+  #
+  #   return power_of_2(num / 2)
+  return true if [1, 2].include?(num)
+  return false if num.odd?
+
+  power_of_two?(num / 2)
+end
+
+puts power_of_two? 1
+puts power_of_two? 2
+puts power_of_two? 5
