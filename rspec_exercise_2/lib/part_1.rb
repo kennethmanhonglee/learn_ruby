@@ -22,3 +22,33 @@ def merge(hash1, hash2)
 
   result
 end
+
+def censor(sentence, curses)
+  sentence_a = sentence.split(' ')
+  result = []
+
+  sentence_a.each do |word|
+    result << if curses.include? word.downcase
+                censor_vowels(word)
+              else
+                word
+              end
+  end
+
+  result.join(' ')
+end
+
+def censor_vowels(word)
+  vowels = 'aeiou'
+  result = ''
+
+  word.each_char do |char|
+    result += if vowels.include? char.downcase
+                '*'
+              else
+                char
+              end
+  end
+
+  result
+end
