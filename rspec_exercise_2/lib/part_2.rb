@@ -8,3 +8,9 @@ def palindrome?(string)
 
   true
 end
+
+def substrings(string)
+  #   nested loop - i starts at 0
+  #     j starts at i
+  #       results << results[-1] += string[j]
+end
