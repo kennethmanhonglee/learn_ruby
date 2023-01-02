@@ -22,3 +22,8 @@ def my_any?(array, &prc)
   array.each { |ele| return true if prc.call ele }
   false
 end
+
+def my_all?(array, &prc)
+  array.each { |ele| return false unless prc.call ele }
+  true
+end
