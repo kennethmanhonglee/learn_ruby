@@ -9,3 +9,7 @@ def no_valid_url?(urls)
 
   urls.none? { |url| valid_urls.include? url.split('.')[1] }
 end
+
+def any_passing_students?(students)
+  students.any? { |student| (student[:grades].sum.to_f / student[:grades].length) >= 75 }
+end
