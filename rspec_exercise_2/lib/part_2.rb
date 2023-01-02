@@ -16,10 +16,14 @@ def substrings(string)
   results = []
   (0...string.length).each do |i|
     results << string[i]
-    (i+1...string.length).each do |j|
+    (i + 1...string.length).each do |j|
       results << "#{results[-1]}#{string[j]}"
     end
   end
 
   results
+end
+
+def palindrome_substrings(string)
+  substrings(string).filter { |sub| palindrome?(sub) && sub.length > 1 }
 end
