@@ -17,3 +17,8 @@ def my_count(array, &prc)
   array.each { |ele| count += 1 if prc.call ele }
   count
 end
+
+def my_any?(array, &prc)
+  array.each { |ele| return true if prc.call ele }
+  false
+end
